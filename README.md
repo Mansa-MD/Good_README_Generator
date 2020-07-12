@@ -4,7 +4,7 @@
 
 # Readme Generator
 # Description
-This tool allows you to generate a README  file template using the  answers to questions in the terminal
+This tool allows you to generate a README file using prompts in the terminal, using inquirer.
 # Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
@@ -13,15 +13,17 @@ This tool allows you to generate a README  file template using the  answers to q
 * [Tests](#Tests)
 * [Questions](#Questions)
 # Installation
-run 'npm install'
+This application runs locally and the only way to download would be to clone or downlaod this repository at the moment.
+Run 'npm install'
 # Usage
-run 'node index.js'
+Run 'node index.js'
 # License
-MIT License selected. See the badge above for further details.
+MIT License 
 # Contributing
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Please note we have a code of conduct, please follow it in all your interactions with the project.
 # Tests
-There are no tests
+No tests
 # Questions
-[![Repo Owner Image](https://avatars.githubusercontent.com/Mansa-MD?s=100)](mailto:mory.d192@gmail.com)
+Please email me ↓ for any questions
+![](mailto:mory.d192@gmail.com)
 Please send any questions you may have to the repo owner.
