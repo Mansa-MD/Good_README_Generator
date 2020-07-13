@@ -3,59 +3,68 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 // const generateMarkdown = require("./utils/generateMarkdown.js");
 
+
+
 const questions = [
+    //ask user for name of the app 
     {
-        "message": "What is your github id?",
-        "type": "input",
-        "name": "username"
+      
+        type: 'input',
+        name: 'repoName',
+        message: 'What is name of this application? (This will aslo the main header of the README)',
+     
     },
+    //asks user for git hub user name 
     {
-        "message": "What's the project repo name?",
-        "type": "input",
-        "name": "project"
+        type: 'input',
+        name: 'gitHubName',
+        message: 'What is your username on Github?',
+     
     },
+    // asks for a description of the project 
     {
-        "message": "What's the project title?",
-        "type": "input",
-        "name": "projectTitle",
-        "default": "No Project Title Provided"
+        type: 'input',
+        message: 'Write a description of this application',
+        name: 'description',
+     
     },
+    // How do you install your app? 
     {
-        "message": "What's the project description?",
-        "type": "input",
-        "name": "projectDescription",
-        "default": "No Description Provided"
+        type: 'input',
+        message: 'How does a user install your application? Provide instuctions here',
+        name: 'installApp',
+     
     },
+   // How does a user use your application? 
     {
-        "message": "What are the installation instructions?",
-        "type": "input",
-        "name": "installationInsctructions",
-        "default": "No Installation Instructions Provided"
+        type: 'input',
+        message: 'How does a user use your application? Provide instuctions here',
+        name: 'appInstructions',
+     
     },
+    // How would a user of this application report an issue, or make a contribution to it? 
     {
-        "message": "How do you run the application?",
-        "type": "input",
-        "name": "usage",
-        "default": "No Usage Instructions Provided"
+        type: 'input',
+        message: 'Would you like you users to be able to report issues or contribute to this project? add instructions here.',
+        name: 'appIssuesAndCont',
+     
     },
+ // promts what license they would you  like to use? 
+ // THIS SHOULD BE USED FOR A BADGE. 
     {
-        "message": "Which license do you want to use for this project?",
-        "type": "list",
-        "name": "license",
-        "default": "MIT License"
+        type: 'input',
+        message: 'What license they would you  like to use? (Ex: MIT, GPL 3.0) If you do not wish to use a license type "none" ',
+        name: 'license',
+     
     },
+ //Asks the user who else contributed to their application 
     {
-        "message": "How do you run the tests?",
-        "type": "input",
-        "name": "tests",
-        "default": "No Testing"
+        type: 'input',
+        message: 'Who else contributed to your application? if none write "none" ',
+        name: 'contributors',
+     
     },
-    {
-        "message": "What is the email address of the repo owner?",
-        "type": "input",
-        "name": "email",
-        "default":  "mory.d192@gmail.com"
-    },
+
 ];
 
 function init() {
@@ -157,17 +166,3 @@ fs.appendFileSync("README.md", ("## Licence(s)" + '\n' + response.license)+ '\n'
 init();
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-//for testing purposes: 
-
-//Shows waht the resposne for the questions were. 
-// console.log(response)
-// console.log(response.gitHubName)
-// console.log(response.repoName)
-// console.log(response.description)
-// console.log(response.appInstructions)
-// console.log(response.appIssuesAndCont)
-// console.log(response.license)
-// console.log(response.contributors)
