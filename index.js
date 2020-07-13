@@ -70,7 +70,6 @@ const questions = [
 function init() {
 inquirer.prompt(questions).then((response)=>{
 
-// this will Create the first line and main header for the repo (that is what the "# " is for) using the users resonse to RepoName
 fs.appendFileSync("README.md", ("# " + response.repoName )+ '\n', function(err) { 
 
     if (err) { 
@@ -81,8 +80,8 @@ fs.appendFileSync("README.md", ("# " + response.repoName )+ '\n', function(err) 
     }
 
 })
-// this will create the 2nd line of readme discribing the application was developed by the users reponse to githubname 
-fs.appendFileSync("README.md", ("This application was developed by: " + response.gitHubName + '\n') + '\n', function(err) { 
+ 
+fs.appendFileSync("README.md", ("Developed by: " + response.gitHubName + '\n') + '\n', function(err) { 
 
     if (err) { 
     console.log(err)
@@ -92,7 +91,7 @@ fs.appendFileSync("README.md", ("This application was developed by: " + response
     }
 
 })
-// adds the discription of the project that the users entered 
+
 fs.appendFileSync("README.md", ( response.description ) + '\n', function(err) { 
 
     if (err) { 
@@ -103,7 +102,7 @@ fs.appendFileSync("README.md", ( response.description ) + '\n', function(err) {
     }
 
 })
-//creates a sub header for installation and adds the instructions the users entered 
+ 
 fs.appendFileSync("README.md", ("## Installation" + '\n' + response.installApp )+ '\n', function(err) { 
 
     if (err) { 
@@ -114,8 +113,8 @@ fs.appendFileSync("README.md", ("## Installation" + '\n' + response.installApp )
     }
 
 })
-// creates a sub header for App usage and adds the instructions the users entered 
-fs.appendFileSync("README.md", ("## How to use the Application" + '\n' + response.appInstructions)+ '\n', function(err) { 
+
+fs.appendFileSync("README.md", ("## Usage" + '\n' + response.appInstructions)+ '\n', function(err) { 
 
     if (err) { 
     console.log(err)
@@ -125,8 +124,8 @@ fs.appendFileSync("README.md", ("## How to use the Application" + '\n' + respons
     }
 
 })
-// creates a sub header for issue reporting and contriubiting and adds the instructions the users entered 
-fs.appendFileSync("README.md", ("## Issue Reporting and Contributing" + '\n' + response.appIssuesAndCont)+ '\n', function(err) { 
+
+fs.appendFileSync("README.md", ("## License" + '\n' + response.license)+ '\n', function(err) { 
 
     if (err) { 
     console.log(err)
@@ -136,8 +135,8 @@ fs.appendFileSync("README.md", ("## Issue Reporting and Contributing" + '\n' + r
     }
 
 })
-// creates a sub header for issue reporting and contriubiting and adds the instructions the users entered 
-fs.appendFileSync("README.md", ("## Other Contibuting Developers:" + '\n' + response.contributors)+ '\n', function(err) { 
+ 
+fs.appendFileSync("README.md", ("## Contributing:" + '\n' + response.contributors)+ '\n', function(err) { 
 
     if (err) { 
     console.log(err)
@@ -147,8 +146,8 @@ fs.appendFileSync("README.md", ("## Other Contibuting Developers:" + '\n' + resp
     }
 
 })
-// creates a sub header for licences and adds the licences the users entered 
-fs.appendFileSync("README.md", ("## Licence(s)" + '\n' + response.license)+ '\n', function(err) { 
+
+fs.appendFileSync("README.md", ("## Questions" + '\n' + response.appIssuesAndCont)+ '\n', function(err) { 
 
     if (err) { 
     console.log(err)
@@ -162,7 +161,6 @@ fs.appendFileSync("README.md", ("## Licence(s)" + '\n' + response.license)+ '\n'
 })
 }
 
-//runs the function to creat the file 
+//runs the function to create the file 
 init();
-
 
